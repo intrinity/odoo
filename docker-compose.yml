@@ -1,0 +1,14 @@
+services:
+    db:
+        image: postgres:13
+        restart: unless-stopped
+        environment:
+            POSTGRES_USER: odoo
+            POSTGRES_PASSWORD: odoo
+            POSTGRES_DB: odoo
+        ports:
+            - 5432:5432
+        volumes:
+            - odoodata:/var/lib/postgresql/data
+volumes:
+    odoodata:
